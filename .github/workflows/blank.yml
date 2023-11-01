@@ -18,6 +18,8 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: Try to fail
+        run: exit 1
       - uses: act10ns/slack@v2
         with: 
           status: ${{ job.status }}
